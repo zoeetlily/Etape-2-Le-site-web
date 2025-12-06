@@ -509,4 +509,45 @@ img {
         grid-template-columns: repeat(2, 1fr); 
         gap: 10px;
     }
+    /* =========================
+   ANIMATIONS
+   ========================= */
+
+/* 1. Animation du titre Hero */
+@keyframes slideFadeIn {
+    0% {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.hero-title {
+    animation: slideFadeIn 1.2s ease-out forwards;
+}
+
+/* 2. Animation rebond des images de la galerie */
+@keyframes bounceIn {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    60% {
+        transform: scale(1.05);
+        opacity: 1;
+    }
+    80% {
+        transform: scale(0.98);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.gallery-item img {
+    animation: bounceIn 0.8s ease forwards;
+}
 }
