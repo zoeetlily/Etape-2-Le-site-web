@@ -228,8 +228,7 @@ body.dark-page .navbar a {
 
 .project-footer-quote { text-align: center; padding-bottom: 80px; }
 .project-footer-quote blockquote {
-    /* Utilisation de blockquote pour la sémantique, mais on stylise le <p> de l'index.html aussi */
-    margin: 0; /* Réinitialise la marge par défaut de blockquote */
+    margin: 0;
 }
 .project-footer-quote blockquote, 
 .project-footer-quote p {
