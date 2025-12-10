@@ -61,18 +61,32 @@
 
     <header class="header">
         <a href="index.html" class="logo">VIVE LE SUD<br><span class="logo-sub">BY MARINE</span></a>
+        
+        <input type="checkbox" id="menu-toggle-checkbox" class="menu-toggle-checkbox" hidden>
+        
+        <label for="menu-toggle-checkbox" class="menu-toggle" aria-label="Toggle menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </label>
+        
         <nav class="navbar">
             <a href="index.html#about">ABOUT</a>
             <a href="index.html#projects">GALLERY</a>
             <a href="index.html#visit">VISIT</a>
             <a href="index.html#contact">CONTACT</a>
+            
+            <div class="socials mobile-socials">
+                <a href="#" target="_blank">IG</a>
+                <a href="#" target="_blank">FB</a>
+            </div>
         </nav>
+        
         <div class="socials">
             <a href="#" target="_blank">IG</a>
             <a href="#" target="_blank">FB</a>
         </div>
     </header>
-
     <main>
         <section class="project-header">
             <span class="gallery-subtitle">MY GALLERY</span>
@@ -104,9 +118,11 @@
         </section>
 
         <section class="project-footer-quote">
-            <p>“Sur une terrasse, le temps s’arrête. Les rires se mélangent<br>
-            à la lumière, et tout devient<br>
-            instant à capturer”</p>
+            <blockquote>
+                “Sur une terrasse, le temps s’arrête. Les rires se mélangent<br>
+                à la lumière, et tout devient<br>
+                instant à capturer”
+            </blockquote>
             <span class="signature">by MARINE</span>
         </section>
     </main>
@@ -120,5 +136,21 @@
         </div>
     </footer>
 
-</body>
+    <script>
+        // Fermer le menu mobile automatiquement quand on clique sur un lien
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuCheckbox = document.getElementById('menu-toggle-checkbox');
+            const navLinks = document.querySelectorAll('.navbar a');
+            
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    // Décocher la checkbox pour fermer le menu
+                    if (menuCheckbox && menuCheckbox.checked) {
+                        menuCheckbox.checked = false;
+                    }
+                });
+            });
+        });
+    </script>
+    </body>
 </html>
