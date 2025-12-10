@@ -74,7 +74,6 @@ a { text-decoration: none; color: inherit; }
     background-color: var(--gold-text);
     transition: all 0.3s ease-in-out;
 }
-
 .mobile-socials {
     display: none; /* Cache les liens sociaux mobiles par défaut (desktop) */
 }
@@ -85,7 +84,6 @@ a { text-decoration: none; color: inherit; }
    3. PAGES PROJETS (STYLE MARRON)
    ======================================================= */
 
-/* Force le fond marron sur les pages projets (déjà dans le <style> du HTML, mais ici pour référence) */
 body.dark-page {
     background-color: var(--dark-brown) !important;
     color: var(--gold-text) !important;
@@ -139,7 +137,7 @@ body.dark-page {
 .footer-icons a { color: var(--gold-text); text-decoration: none; margin: 0 10px; }
 
 /* =======================================================
-   5. RESPONSIVE MOBILE
+   5. RESPONSIVE MOBILE (CORRIGÉ)
    ======================================================= */
 @media (max-width: 768px) {
     /* Header Mobile */
@@ -153,7 +151,7 @@ body.dark-page {
         display: none; /* Cache les liens sociaux desktop */
     }
     
-    /* --- MENU BURGER MOBILE : Style de la navigation --- */
+    /* --- MENU BURGER MOBILE : Style de la navigation (CORRIGÉ) --- */
     .navbar {
         position: fixed;
         top: 0; right: 0;
@@ -163,7 +161,8 @@ body.dark-page {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        transform: translateX(100%); /* Masque la navigation hors écran */
+        /* TRANSFORMATION : C'est la bonne façon de cacher/afficher le menu */
+        transform: translateX(100%); 
         transition: transform 0.4s ease-in-out;
         z-index: 99;
     }
@@ -203,7 +202,7 @@ body.dark-page {
     }
     /* ---------------------------------------------------- */
     
-    /* Projets spécifiques (Archi, Jacques, Babel, etc.) */
+    /* Adaptation de la grille photos sur mobile */
     .project-title { font-size: 3rem; }
     .photo-grid-container, 
     .photo-grid-container.grid-3 {
@@ -211,5 +210,4 @@ body.dark-page {
         grid-template-columns: 1fr; /* 1 colonne sur mobile partout */
         gap: 10px;
     }
-    
 }
