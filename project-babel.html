@@ -104,14 +104,12 @@
     </footer>
 
     <script>
-        // Fermer le menu mobile automatiquement quand on clique sur un lien de navigation
         document.addEventListener('DOMContentLoaded', function() {
             const menuCheckbox = document.getElementById('menu-toggle-checkbox');
             const navLinks = document.querySelectorAll('.navbar a'); 
             
             navLinks.forEach(link => {
                 link.addEventListener('click', function() {
-                    // Décocher la checkbox pour fermer le menu
                     if (menuCheckbox && menuCheckbox.checked) {
                         menuCheckbox.checked = false;
                     }
