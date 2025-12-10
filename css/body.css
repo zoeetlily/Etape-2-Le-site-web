@@ -71,7 +71,7 @@ img {
     font-family: var(--font-title);
     font-size: 0.9rem;
     letter-spacing: 1px;
-    transition: color 0.3s;
+    transition: color 0.3s ease;
 }
 
 .navbar a:hover {
@@ -84,336 +84,38 @@ img {
     text-decoration: none;
     font-weight: bold;
     font-size: 1.1rem;
+    transition: color 0.3s ease;
 }
 
-/* --- 4. HERO SECTION (ACCUEIL) --- */
-.hero {
-    text-align: center;
-    background-color: var(--dark-brown);
-    padding-bottom: 50px;
-}
-
-.hero-title {
-    font-family: var(--font-elegant);
-    font-size: 11vw;
-    color: var(--gold-text);
-    margin: 0;
-    padding: 40px 0 20px 0;
-    line-height: 0.8;
-    font-weight: 400;
-}
-
-.hero-grid {
-    position: relative;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.hero-img-main img {
-    height: 75vh;
-    width: 100%;
-    object-position: center;
-}
-
-.hero-img-small {
-    width: 300px;
-    height: 200px;
-    position: absolute;
-    bottom: -60px;
-    left: 50px;
-    border: 5px solid var(--light-bg);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-    z-index: 10;
-}
-
-/* --- 5. ABOUT SECTION (ACCUEIL) --- */
-.about {
-    padding: 120px 20px 80px;
-    max-width: 1100px;
-    margin: 0 auto;
-    overflow: hidden;
-}
-
-.about-header {
-    text-align: center;
-    position: relative;
-    margin-bottom: 60px;
-}
-
-.section-tag {
-    font-family: var(--font-elegant);
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-size: 1rem;
-    display: block;
-    margin-bottom: 10px;
-    color: var(--dark-brown);
-}
-
-.big-text-bg {
-    font-family: var(--font-elegant);
-    font-size: 16vw;
-    color: rgba(52, 41, 27, 0.05);
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100%;
-    z-index: -1;
-    white-space: nowrap;
-    pointer-events: none;
-}
-
-.about-intro {
-    font-family: var(--font-elegant);
-    font-size: 1.6rem;
-    line-height: 1.4;
-    max-width: 800px;
-    margin: 0 auto;
-    text-transform: uppercase;
-    color: var(--dark-brown);
-}
-
-.about-content {
-    display: flex;
-    align-items: center;
-    gap: 60px;
-    margin-top: 60px;
-}
-
-.about-photo {
-    flex: 1;
-}
-
-.about-photo img {
-    border-radius: 4px;
-    filter: grayscale(100%);
-}
-
-.about-text {
-    flex: 1;
-    font-size: 1.1rem;
-    line-height: 1.7;
-    color: #000;
-}
-
-/* --- 6. PROJECTS GALLERY (ACCUEIL) --- */
-.projects {
-    background-color: var(--dark-brown);
-    color: var(--gold-text);
-    padding: 80px 40px;
-}
-
-.projects-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    margin-bottom: 60px;
-    border-bottom: 1px solid rgba(254, 231, 189, 0.3);
-    padding-bottom: 20px;
-}
-
-.gold-title {
-    font-family: var(--font-elegant);
-    font-size: 4rem;
-    color: var(--gold-text);
-    font-weight: 400;
-}
-
-.gallery-tag {
-    font-family: var(--font-elegant);
-    font-size: 1.2rem;
+.socials a:hover {
     color: #fff;
 }
 
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 50px;
-    max-width: 1200px;
-    margin: 0 auto;
+/* --- AJOUTS BURGER (État Initial Desktop) --- */
+.menu-toggle {
+    display: none; /* Caché sur desktop */
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+    cursor: pointer;
+    z-index: 101;
 }
 
-.gallery-item {
-    position: relative;
-    text-align: center;
-}
-
-/* Pour le lien autour de l'image */
-.gallery-item a {
-    text-decoration: none;
+.bar {
     display: block;
-}
-
-.gallery-item img {
-    height: 400px;
-    object-fit: cover;
-    opacity: 0.85;
-    transition: opacity 0.3s ease;
-}
-
-.gallery-item:hover img {
-    opacity: 1;
-}
-
-.gallery-title {
-    font-family: var(--font-title);
-    font-size: 2.2rem;
-    color: var(--gold-text);
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-shadow: 3px 3px 0px var(--dark-brown);
     width: 100%;
+    height: 3px;
+    background-color: var(--gold-text);
+    transition: all 0.3s ease-in-out;
 }
 
-.quote-container {
-    text-align: center;
-    margin-top: 100px;
+.mobile-socials {
+    display: none; /* Caché sur desktop */
 }
+/* ------------------------------------------- */
 
-.quote {
-    font-family: var(--font-body);
-    font-style: italic;
-    font-size: 1.3rem;
-    color: var(--orange-accent);
-    margin-bottom: 10px;
-}
-
-.signature {
-    font-family: var(--font-elegant);
-    font-size: 0.9rem;
-    color: var(--orange-accent);
-}
-
-/* --- 7. VISIT & CONTACT (ACCUEIL) --- */
-.visit {
-    padding: 80px 20px;
-    background-color: var(--light-bg);
-}
-
-.visit-top {
-    text-align: left;
-    max-width: 1200px;
-    margin: 0 auto 30px;
-}
-
-.visit-title {
-    font-family: var(--font-elegant);
-    font-size: 3.5rem;
-    font-weight: 300;
-    color: var(--dark-brown);
-}
-
-.visit-map-container {
-    position: relative;
-    height: 600px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.map-bg {
-    height: 100%;
-    width: 100%;
-    filter: grayscale(100%) opacity(0.8);
-}
-
-.visit-card {
-    position: absolute;
-    bottom: 60px;
-    left: 60px;
-    background-color: var(--dark-brown);
-    color: var(--gold-text);
-    padding: 50px;
-    width: 400px;
-    box-shadow: 15px 15px 0 rgba(0,0,0,0.1);
-}
-
-.visit-card h3 {
-    font-family: var(--font-title);
-    margin-bottom: 15px;
-    font-size: 1.8rem;
-    color: var(--gold-text);
-}
-
-.visit-card p {
-    margin-bottom: 30px;
-    font-family: var(--font-body);
-    font-size: 1rem;
-    line-height: 1.6;
-    color: #fff;
-}
-
-.contact {
-    padding: 100px 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.section-tag-center {
-    text-align: center;
-    font-family: var(--font-elegant);
-    margin-bottom: 60px;
-    font-size: 1.5rem;
-    letter-spacing: 3px;
-    color: var(--dark-brown);
-}
-
-.contact-container {
-    display: flex;
-    gap: 80px;
-}
-
-.contact-info { flex: 1; }
-.contact-info h2 {
-    font-family: var(--font-title);
-    font-size: 2.8rem;
-    margin-bottom: 30px;
-    color: var(--dark-brown);
-    line-height: 1.1;
-}
-.contact-info ul { list-style: none; padding-left: 0; }
-.contact-info ul li { margin-bottom: 10px; position: relative; padding-left: 20px; }
-.contact-info ul li::before { content: "→"; position: absolute; left: 0; color: var(--orange-accent); }
-
-.contact-form {
-    flex: 1;
-    background-color: var(--dark-brown);
-    padding: 50px;
-}
-.form-row { display: flex; gap: 20px; }
-.input-group { margin-bottom: 25px; width: 100%; }
-.contact-form label { display: block; color: var(--gold-text); margin-bottom: 8px; font-size: 0.9rem; text-transform: uppercase; }
-.contact-form input, .contact-form textarea {
-    width: 100%; background: transparent; border: none; border-bottom: 1px solid #fff;
-    color: #fff; padding: 10px 0; font-family: var(--font-body); font-size: 1rem;
-}
-.contact-form button {
-    background-color: #d2d2d2; border: none; padding: 12px 35px; cursor: pointer;
-    font-weight: bold; font-family: var(--font-body); margin-top: 10px; float: right;
-    text-transform: uppercase; transition: background 0.3s;
-}
-.contact-form button:hover { background-color: #fff; }
-
-/* --- 8. FOOTER --- */
-.footer {
-    background-color: var(--dark-brown);
-    color: var(--gold-text);
-    text-align: center;
-    padding: 40px;
-    font-size: 0.9rem;
-    border-top: 1px solid rgba(255,255,255,0.1);
-}
-.footer p { margin-bottom: 10px; }
-.footer-icons { margin-top: 20px; font-weight: bold; letter-spacing: 5px; }
-.footer-icons a { color: var(--gold-text); text-decoration: none; margin: 0 10px; transition: color 0.3s; }
-.footer-icons a:hover { color: #fff; }
-
-
-/* =======================================================
-   9. NOUVEAU : STYLE POUR LA PAGE PROJET (ARCHI 0.0)
-   ======================================================= */
+/* --- 4. STYLE DE PAGE PROJET --- */
 
 .project-header {
     text-align: center;
@@ -439,19 +141,23 @@ img {
     margin: 0;
 }
 
-/* La Grille de photos (4 colonnes) */
 .photo-grid-container {
     display: grid;
-    /* 4 colonnes égales */
-    grid-template-columns: repeat(4, 1fr); 
+    grid-template-columns: repeat(4, 1fr); /* 4 colonnes pour Archi */
     gap: 20px;
     padding: 0 40px 80px;
     max-width: 1600px;
     margin: 0 auto;
 }
 
+/* Styles pour les pages avec 3 colonnes (comme Jacques) */
+.photo-grid-container.grid-3 {
+    grid-template-columns: repeat(3, 1fr); 
+    max-width: 1100px;
+}
+
 .photo-item {
-    aspect-ratio: 3/4; /* Format portrait */
+    aspect-ratio: 3/4; 
     overflow: hidden;
 }
 
@@ -463,7 +169,7 @@ img {
 }
 
 .photo-item:hover img {
-    transform: scale(1.05); /* Petit zoom au survol */
+    transform: scale(1.05); /* Effet zoom au survol */
 }
 
 /* Citation bas de page projet */
@@ -472,6 +178,7 @@ img {
     padding-bottom: 80px;
 }
 
+.project-footer-quote blockquote,
 .project-footer-quote p {
     font-family: var(--font-body);
     font-size: 1.5rem;
@@ -481,14 +188,101 @@ img {
     font-style: italic;
 }
 
+.project-footer-quote blockquote {
+    margin: 0; /* Pour réinitialiser le style du blockquote */
+}
+
+.signature {
+    font-family: var(--font-elegant);
+    font-size: 0.9rem;
+    color: var(--orange-accent);
+}
+
+/* --- 5. FOOTER --- */
+.footer {
+    background-color: var(--dark-brown);
+    color: var(--gold-text);
+    text-align: center;
+    padding: 40px;
+    font-size: 0.9rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.footer p {
+    margin-bottom: 10px;
+}
+
+.footer-icons a {
+    color: var(--gold-text);
+    text-decoration: none;
+    margin: 0 10px;
+}
 
 /* =======================================================
    10. RESPONSIVE MOBILE (Pour tout le site)
    ======================================================= */
 @media (max-width: 768px) {
-    /* --- Accueil --- */
-    .header { padding: 15px 20px; }
-    .navbar { display: none; } /* Menu caché sur mobile */
+    
+    /* --- MENU BURGER MOBILE : Affichage de l'icône --- */
+    .menu-toggle {
+        display: flex; /* Affiche l'icône du burger */
+    }
+    .socials {
+        display: none; /* Cache les liens sociaux desktop */
+    }
+    
+    /* --- MENU BURGER MOBILE : Style de la navigation --- */
+    .navbar {
+        position: fixed;
+        top: 0; right: 0;
+        height: 100vh;
+        width: 100%;
+        background-color: var(--dark-brown);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transform: translateX(100%); /* Masque la navigation hors écran */
+        transition: transform 0.4s ease-in-out;
+        z-index: 99;
+    }
+    .navbar a {
+        font-size: 1.8rem;
+        margin: 20px 0;
+        padding: 10px 0;
+        display: block;
+        letter-spacing: 5px;
+    }
+    
+    /* Affiche les liens sociaux mobiles */
+    .mobile-socials {
+        display: block;
+        margin-top: 30px;
+    }
+    .mobile-socials a {
+        font-size: 1.5rem;
+        margin: 0 15px;
+    }
+    
+    /* --- MENU BURGER MOBILE : Comportement à l'ouverture --- */
+    /* Lorsque la checkbox est cochée, déplace la navbar pour l'afficher */
+    .menu-toggle-checkbox:checked ~ .navbar {
+        transform: translateX(0);
+    }
+    
+    /* Animation de la croix (X) lorsque le menu est ouvert */
+    .menu-toggle-checkbox:checked ~ .menu-toggle .bar:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 6px);
+    }
+    .menu-toggle-checkbox:checked ~ .menu-toggle .bar:nth-child(2) {
+        opacity: 0;
+    }
+    .menu-toggle-checkbox:checked ~ .menu-toggle .bar:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -6px);
+    }
+    /* ---------------------------------------------------- */
+    
+    /* --- Styles responsive pour le reste du contenu --- */
+    .header { padding: 15px 20px; } 
     .hero-title { font-size: 15vw; padding-top: 80px; }
     .hero-img-main img { height: 400px; }
     .hero-img-small { width: 180px; height: 120px; left: 20px; bottom: -40px; }
@@ -498,15 +292,17 @@ img {
     .projects { padding: 60px 20px; }
     .gold-title { font-size: 2.5rem; }
     .gallery-grid { grid-template-columns: 1fr; }
-    .contact-container { flex-direction: column; gap: 40px; }
+    .gallery-item img { height: 300px; }
+    .visit-map-container { height: 400px; }
     .visit-card { position: relative; bottom: 0; left: 0; width: 100%; margin-top: -50px; padding: 30px; }
+    .contact-container { flex-direction: column; gap: 40px; }
 
-    /* --- Page Projet --- */
+    /* Projets spécifiques (Archi, Jacques, etc.) */
     .project-title { font-size: 3rem; }
-    .photo-grid-container {
+    .photo-grid-container, 
+    .photo-grid-container.grid-3 {
         padding: 0 20px 60px;
-        /* Sur mobile, on passe à 2 colonnes au lieu de 4 */
-        grid-template-columns: repeat(2, 1fr); 
+        grid-template-columns: 1fr; /* 1 colonne sur mobile partout */
         gap: 10px;
     }
 }
