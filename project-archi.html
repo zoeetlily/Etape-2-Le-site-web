@@ -15,41 +15,55 @@
 
     <header class="header">
         <a href="index.html" class="logo">VIVE LE SUD<br><span class="logo-sub">BY MARINE</span></a>
+        
+        <input type="checkbox" id="menu-toggle-checkbox" class="menu-toggle-checkbox" hidden>
+        
+        <label for="menu-toggle-checkbox" class="menu-toggle" aria-label="Toggle menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </label>
+        
         <nav class="navbar">
             <a href="index.html#about">ABOUT</a>
             <a href="index.html#projects">GALLERY</a>
             <a href="index.html#visit">VISIT</a>
             <a href="index.html#contact">CONTACT</a>
+            
+            <div class="socials mobile-socials">
+                <a href="https://www.instagram.com/" target="_blank">IG</a>
+                <a href="https://www.facebook.com/" target="_blank">FB</a>
+            </div>
         </nav>
+        
         <div class="socials">
             <a href="https://www.instagram.com/" target="_blank">IG</a>
             <a href="https://www.facebook.com/" target="_blank">FB</a>
         </div>
     </header>
-
     <main>
         <section class="project-header">
             <span class="gallery-subtitle">MY GALLERY</span>
-            <h1 class="project-title">ARCHI 0.0</h1>
+            <h1 class="project-title">ARCHI<br>0.0</h1>
         </section>
 
         <section class="photo-grid-container">
             
             <div class="photo-item">
-                <img src="Images/Images2/1.jpeg" alt="Cuisine marbre plan large">
+                <img src="Images/Images2/1.jpeg" alt="Cuisine ouverte bois">
             </div>
             <div class="photo-item">
-                <img src="Images/Images2/2.jpeg" alt="Salon etagere et vase vert">
+                <img src="Images/Images2/2.jpeg" alt="Etagères en bois et objets de décoration">
             </div>
             <div class="photo-item">
-                <img src="Images/Images2/3.jpeg" alt="Detail robinetterie cuivre">
+                <img src="Images/Images2/3.jpeg" alt="Détail vaisselle">
             </div>
             <div class="photo-item">
-                <img src="Images/Images2/4.jpeg" alt="Detail chambre draps">
+                <img src="Images/Images2/4.jpeg" alt="Verres et carafes">
             </div>
 
             <div class="photo-item">
-                <img src="Images/Images2/5.jpeg" alt="Salon fauteuil bouclette">
+                <img src="Images/Images2/5.jpeg" alt="Murs en pierre et table en bois">
             </div>
             <div class="photo-item">
                 <img src="Images/Images2/6.jpeg" alt="Cuisine detail bocaux">
@@ -76,7 +90,9 @@
         </section>
 
         <section class="project-footer-quote">
-            <p>"Une archive silencieuse,<br>d'un lieu ou l'on se sent bien"</p>
+            <blockquote>
+                "Une archive silencieuse,<br>d'un lieu ou l'on se sent bien"
+            </blockquote>
             <span class="signature">by MARINE</span>
         </section>
     </main>
@@ -85,10 +101,26 @@
         <p>Authentic Nice Gallery - 36 rue Catherine Segurane</p>
         <p>Tel : +33(0)6 52 06 02 19</p>
         <div class="footer-icons">
-            <a href="https://www.facebook.com/" target="_blank">FB</a>
             <a href="https://www.instagram.com/" target="_blank">IG</a>
+            <a href="https://www.facebook.com/" target="_blank">FB</a>
         </div>
     </footer>
 
-</body>
+    <script>
+        // Fermer le menu mobile automatiquement quand on clique sur un lien de navigation
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuCheckbox = document.getElementById('menu-toggle-checkbox');
+            const navLinks = document.querySelectorAll('.navbar a'); 
+            
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    // Décocher la checkbox pour fermer le menu
+                    if (menuCheckbox && menuCheckbox.checked) {
+                        menuCheckbox.checked = false;
+                    }
+                });
+            });
+        });
+    </script>
+    </body>
 </html>
