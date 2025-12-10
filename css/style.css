@@ -53,6 +53,32 @@ img { width: 100%; display: block; object-fit: cover; }
     font-weight: bold; font-size: 1.1rem;
 }
 
+/* --- AJOUT : Menu Burger Desktop/Initial State --- */
+.menu-toggle {
+    display: none; /* Cache l'icône du burger par défaut (desktop) */
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+    cursor: pointer;
+    z-index: 101;
+}
+
+.bar {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: var(--gold-text);
+    transition: all 0.3s ease-in-out;
+}
+
+/* Cache les liens sociaux mobiles par défaut (desktop) */
+.mobile-socials {
+    display: none;
+}
+/* ------------------------------------------------ */
+
+
 /* =======================================================
    3. PAGE D'ACCUEIL (HOME)
    ======================================================= */
@@ -201,6 +227,11 @@ body.dark-page .navbar a {
 .photo-item:hover img { transform: scale(1.05); }
 
 .project-footer-quote { text-align: center; padding-bottom: 80px; }
+.project-footer-quote blockquote {
+    /* Utilisation de blockquote pour la sémantique, mais on stylise le <p> de l'index.html aussi */
+    margin: 0; /* Réinitialise la marge par défaut de blockquote */
+}
+.project-footer-quote blockquote, 
 .project-footer-quote p {
     font-family: var(--font-body); font-size: 1.5rem; color: var(--orange-accent);
     margin-bottom: 15px; line-height: 1.4; font-style: italic;
@@ -212,7 +243,66 @@ body.dark-page .navbar a {
    ======================================================= */
 @media (max-width: 768px) {
     /* Accueil */
-    .header { padding: 15px 20px; } .navbar { display: none; }
+    .header { padding: 15px 20px; } 
+    
+    /* --- MENU BURGER MOBILE : Affichage de l'icône --- */
+    .menu-toggle {
+        display: flex; /* Affiche l'icône du burger */
+    }
+    .socials {
+        display: none; /* Cache les liens sociaux desktop */
+    }
+    
+    /* --- MENU BURGER MOBILE : Style de la navigation --- */
+    .navbar {
+        position: fixed;
+        top: 0; right: 0;
+        height: 100vh;
+        width: 100%;
+        background-color: var(--dark-brown);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transform: translateX(100%); /* Masque la navigation hors écran */
+        transition: transform 0.4s ease-in-out;
+        z-index: 99;
+    }
+    .navbar a {
+        font-size: 1.8rem;
+        margin: 20px 0;
+        padding: 10px 0;
+        display: block;
+        letter-spacing: 5px;
+    }
+    
+    /* Affiche les liens sociaux mobiles */
+    .mobile-socials {
+        display: block;
+        margin-top: 30px;
+    }
+    .mobile-socials a {
+        font-size: 1.5rem;
+        margin: 0 15px;
+    }
+    
+    /* --- MENU BURGER MOBILE : Comportement à l'ouverture --- */
+    /* Lorsque la checkbox est cochée, déplace la navbar pour l'afficher */
+    .menu-toggle-checkbox:checked ~ .navbar {
+        transform: translateX(0);
+    }
+    
+    /* Animation de la croix (X) lorsque le menu est ouvert */
+    .menu-toggle-checkbox:checked ~ .menu-toggle .bar:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 6px);
+    }
+    .menu-toggle-checkbox:checked ~ .menu-toggle .bar:nth-child(2) {
+        opacity: 0;
+    }
+    .menu-toggle-checkbox:checked ~ .menu-toggle .bar:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -6px);
+    }
+    /* ---------------------------------------------------- */
+    
     .hero-title { font-size: 15vw; padding-top: 80px; }
     .hero-img-main img { height: 400px; }
     .hero-img-small { width: 180px; height: 120px; left: 20px; bottom: -40px; }
