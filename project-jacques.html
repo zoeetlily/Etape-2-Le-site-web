@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="css/style.css">
 
     <style>
-        /* Force le fond marron et le texte doré */
+        /* Force le fond marron et le texte doré (styles spécifiques à cette page) */
         body {
             background-color: #34291b !important;
             color: #fee7bd !important;
@@ -137,10 +137,11 @@
     </footer>
 
     <script>
-        // Fermer le menu mobile automatiquement quand on clique sur un lien
+        // Fermer le menu mobile automatiquement quand on clique sur un lien de navigation
         document.addEventListener('DOMContentLoaded', function() {
             const menuCheckbox = document.getElementById('menu-toggle-checkbox');
-            const navLinks = document.querySelectorAll('.navbar a');
+            // Sélectionne tous les liens dans la navigation
+            const navLinks = document.querySelectorAll('.navbar a'); 
             
             navLinks.forEach(link => {
                 link.addEventListener('click', function() {
