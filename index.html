@@ -6,7 +6,7 @@
     <title>Vive le Sud by Marine</title>
     <meta name="description" content="Découvrez l'univers de Marine, photographe du Sud de la France, mêlant culture italienne, niçoise et corse. Galerie, expositions et contact.">
     
-    <style>
+   <style>
         /* CSS Critique - Extrait de code.css */
         
         /* 1. Variables essentielles */
@@ -55,6 +55,7 @@
         /* Styles pour le menu mobile (au moins le burger) */
         .menu-toggle { display: none; cursor: pointer; flex-direction: column; justify-content: space-around; width: 30px; height: 25px; }
         .bar { width: 100%; height: 3px; background-color: var(--gold-text); transition: all 0.3s ease-in-out; }
+        
         /* Media Query pour le mode mobile */
         @media (max-width: 768px) {
             .navbar { display: none; }
@@ -62,6 +63,12 @@
             .menu-toggle { display: flex; }
             .hero-grid { grid-template-columns: 1fr; gap: 20px; padding: 20px; }
             .hero-img-small { display: none; }
+            
+            /* NOUVELLE RÈGLE : Correction du titre de la section Contact */
+            .contact-info h2 {
+                font-size: 1.8rem; /* Réduit la taille pour qu'elle tienne sur un écran de mobile */
+                line-height: 1.2;  
+            }
         }
     </style>
 
