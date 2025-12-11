@@ -142,3 +142,67 @@
         </section>
 
         <section id="contact" class="contact">
+            <p class="section-tag-center">CONTACT ME</p>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h2>RESTÉS CONNECTÉS<br>À MON UNIVERS.</h2>
+                    <p>En vous abonnant à ma newsletter vous serez les premiers à découvrir :</p>
+                    <ul>
+                        <li>Mes nouvelles œuvres et expositions</li>
+                        <li>Les événements à venir en avant-première</li>
+                        <li>Des contenus exclusifs réservés aux abonnés</li>
+                    </ul>
+                </div>
+
+                <form class="contact-form">
+                    <div class="form-row">
+                        <div class="input-group">
+                            <label for="nom">Nom *</label>
+                            <input type="text" id="nom" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="prenom">Prénom *</label>
+                            <input type="text" id="prenom" required>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label for="email">E-mail *</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="message">MESSAGE :</label>
+                        <textarea rows="4" id="message"></textarea>
+                    </div>
+                    <button type="submit">ENVOYER</button>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <p>Authentic Nice Gallery - 36 rue Catherine Ségurane</p>
+        <p>Tel : +33(0)6 52 06 02 19</p>
+        <div class="footer-icons">FB IG</div> 
+    </footer>
+
+    <script>
+        // Fermer le menu mobile automatiquement quand on clique sur un lien d'ancrage
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuCheckbox = document.getElementById('menu-toggle-checkbox');
+            const navLinks = document.querySelectorAll('.navbar a[href^="#"]');
+            
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    // Décocher la checkbox pour fermer le menu
+                    if (menuCheckbox && menuCheckbox.checked) {
+                        menuCheckbox.checked = false;
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
