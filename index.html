@@ -3,292 +3,144 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vive le Sud by Marine</title>
-    <meta name="description" content="Découvrez l'univers de Marine, photographe du Sud de la France, mêlant culture italienne, niçoise et corse. Galerie, expositions et contact.">
+    <title>Jacques en Terrasse - Vive le Sud</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Aboreto&family=Gasoek+One&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
     
-   <style>
-        /* CSS Critique - Extrait de code.css */
-        
-        /* 1. Variables essentielles */
-        :root {
-            --dark-brown: #34291b;
-            --gold-text: #fee7bd;
-            --light-bg: #f9f5f0;
-            --orange-accent: #b56320;
-            --font-title: 'Gasoek One', display;
-            --font-body: 'Montserrat', sans-serif;
-            --font-elegant: 'Aboreto', cursive;
-        }
+    <link rel="stylesheet" href="css/style.css">
 
-        /* 2. Reset + Bases */
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { background-color: var(--light-bg); color: var(--dark-brown); font-family: var(--font-body); overflow-x: hidden; }
-        img { width: 100%; display: block; object-fit: cover; }
+    <style>
+        /* Force le fond marron et le texte doré */
+        body {
+            background-color: #34291b !important;
+            color: #fee7bd !important;
+        }
+        .project-title, .logo, .socials a, .footer-icons a {
+            color: #fee7bd !important;
+        }
+        .gallery-subtitle, .navbar a {
+            color: #ffffff !important;
+        }
         
-        /* 3. Header + Navigation (Critique) */
-        .header { background-color: var(--dark-brown); padding: 15px 40px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; height: 70px; }
-        .logo { color: var(--gold-text); font-family: var(--font-title); font-size: 1.5rem; text-decoration: none; line-height: 1.2; }
-        .logo-sub { font-size: 0.8rem; font-family: var(--font-body); }
-        .navbar a { text-decoration: none; color: var(--gold-text); font-size: 1rem; margin-left: 25px; transition: color 0.3s; }
-        .socials { display: flex; gap: 15px; }
-        .socials a { color: var(--gold-text); font-size: 1.2rem; text-decoration: none; }
+        /* GRILLE SPÉCIALE : 3 colonnes pour cette page */
+        .photo-grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* 3 images par ligne */
+            gap: 20px;
+            padding: 0 40px 80px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
         
-        /* 4. Section Hero (Critique) */
-        .hero-title { font-family: var(--font-title); font-size: 10vw; text-align: center; padding-top: 100px; color: var(--dark-brown); }
-        .hero-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 20px; padding: 40px 40px 100px; position: relative; }
-        .hero-img-main { grid-column: 1 / 3; }
-        .hero-img-small { width: 340px; height: 231px; position: absolute; right: 40px; bottom: -50px; box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); }
-        
-        /* 5. Accessibilité */
-        .visually-hidden {
-            position: absolute;
-            width: 1px;
-            height: 1px;
-            padding: 0;
-            margin: -1px;
+        /* Images : format portrait */
+        .photo-item {
+            aspect-ratio: 3/4;
             overflow: hidden;
-            clip: rect(0, 0, 0, 0);
-            white-space: nowrap;
-            border-width: 0;
+        }
+        .photo-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        .photo-item:hover img {
+            transform: scale(1.05);
         }
 
-        /* Styles pour le menu mobile (au moins le burger) */
-        .menu-toggle { display: none; cursor: pointer; flex-direction: column; justify-content: space-around; width: 30px; height: 25px; }
-        .bar { width: 100%; height: 3px; background-color: var(--gold-text); transition: all 0.3s ease-in-out; }
-        
-        /* Media Query pour le mode mobile */
+        /* Responsive Mobile : 1 colonne */
         @media (max-width: 768px) {
-            .navbar { display: none; }
-            .socials:not(.mobile-socials) { display: none; }
-            .menu-toggle { display: flex; }
-            .hero-grid { grid-template-columns: 1fr; gap: 20px; padding: 20px; }
-            .hero-img-small { display: none; }
-            
-            /* Correction du titre de la section Contact (Réduction de la taille de police pour qu'elle tienne) */
-            .contact-info h2 {
-                font-size: 1.8rem; 
-                line-height: 1.2;  
+            .photo-grid-container {
+                grid-template-columns: 1fr;
             }
         }
     </style>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-    
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
-    
-    <link rel="preload" 
-          href="https://fonts.googleapis.com/css2?family=Aboreto&family=Gasoek+One&family=Montserrat:wght@300;400;700&display=swap"
-          as="style" 
-          onload="this.onload=null;this.rel='stylesheet'"
-    >
-    <noscript>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Aboreto&family=Gasoek+One&family=Montserrat:wght@300;400;700&display=swap">
-    </noscript>
-    
-    <link rel="stylesheet" href="css/code.css" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="css/code.css"></noscript>
 </head>
-<body>
+
+<body class="dark-page">
 
     <header class="header">
-        <a href="#" class="logo">VIVE LE SUD<br><span class="logo-sub">BY MARINE</span></a>
+        <a href="index.html" class="logo">VIVE LE SUD<br><span class="logo-sub">BY MARINE</span></a>
         
         <input type="checkbox" id="menu-toggle-checkbox" class="menu-toggle-checkbox" hidden>
-        <label for="menu-toggle-checkbox" class="menu-toggle" title="Menu de navigation">
+        
+        <label for="menu-toggle-checkbox" class="menu-toggle" aria-label="Toggle menu">
             <span class="bar"></span>
             <span class="bar"></span>
             <span class="bar"></span>
         </label>
-        <nav class="navbar" aria-label="Navigation principale">
-            <a href="#about">ABOUT</a>
-            <a href="#projects">GALLERY</a>
-            <a href="#visit">VISIT</a>
-            <a href="#contact">CONTACT</a>
+        
+        <nav class="navbar">
+            <a href="index.html#about">ABOUT</a>
+            <a href="index.html#projects">GALLERY</a>
+            <a href="index.html#visit">VISIT</a>
+            <a href="index.html#contact">CONTACT</a>
+            
             <div class="socials mobile-socials">
-                <a href="https://www.instagram.com/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="https://www.facebook.com/?locale=fr_FR" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" target="_blank">IG</a>
+                <a href="#" target="_blank">FB</a>
             </div>
         </nav>
         
         <div class="socials">
-            <a href="https://www.instagram.com/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.facebook.com/?locale=fr_FR" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" target="_blank">IG</a>
+            <a href="#" target="_blank">FB</a>
         </div>
     </header>
-
     <main>
-        <section class="hero">
-            <h1 class="hero-title">MY SOUTH</h1>
-            <div class="hero-grid">
-                <div class="hero-img-main">
-                    <img src="Images/Images1/immeuble.jpg" alt="Façade colorée Nice" loading="eager" width="600" height="400" fetchpriority="high">
-                </div>
-                <div class="hero-img-small">
-                    <picture>
-                        <source type="image/webp" srcset="Images/Images1/4.webp" width="340" height="231" loading="eager">
-                        <source type="image/jpeg" srcset="Images/Images1/4.jpeg" width="340" height="231" loading="eager">
-                        <img src="Images/Images1/4.jpeg" alt="Lecture au soleil" loading="eager" width="340" height="231">
-                    </picture>
-                </div>
-            </div>
+        <section class="project-header">
+            <span class="gallery-subtitle">MY GALLERY</span>
+            <h1 class="project-title">JACQUES<br>EN TERRASSE</h1>
         </section>
 
-        <section id="about" class="about">
-            <h2 class="visually-hidden">À propos de Marine</h2>
-            <div class="about-header">
-                <span class="section-tag">ABOUT ME</span>
-                <div class="big-text-bg">MARINE</div>
-                <p class="about-intro">
-                    JE SUIS UNE FILLE DU SUD, UN MÉLANGE D'ITALIE, DE NICE ET DE CORSE.
-                    LE SOLEIL, LA MER, LES VOIX QUI PARLENT FORT... C'EST MON LANGAGE.
-                </p>
-            </div>
+        <section class="photo-grid-container">
             
-            <div class="about-content">
-                <div class="about-photo">
-                    <picture>
-                        <source type="image/webp" srcset="Images/Images1/2.webp" width="300" height="450" loading="eager">
-                        <source type="image/jpeg" srcset="Images/Images1/2.jpeg" width="300" height="450" loading="eager">
-                        <img src="Images/Images1/2.jpeg" alt="Portrait Marine" loading="eager" width="300" height="450">
-                    </picture>
-                </div>
-                <div class="about-text">
-                    <p>
-                        Depuis un an, j'ai décidé de me lancer pour de bon, de faire de cette passion un projet à part entière.
-                        Mes photos racontent le Sud comme je le ressens : vibrant, sincère, un peu sauvage parfois.
-                        C'est mon ADN, ma maison et je ne l'échangerais pour rien au monde.
-                    </p>
-                </div>
+            <div class="photo-item">
+                <img src="Images/Images3/1.jpeg" alt="Amies">
             </div>
+            <div class="photo-item">
+                <img src="Images/Images3/2.jpeg" alt="Marine terrasse">
+            </div>
+            <div class="photo-item">
+                <img src="Images/Images3/3.jpeg" alt="Photographe">
+            </div>
+
+            <div class="photo-item">
+                <img src="Images/Images3/4.jpeg" alt="DJ">
+            </div>
+            <div class="photo-item">
+                <img src="Images/Images3/5.jpeg" alt="Vin blanc">
+            </div>
+            <div class="photo-item">
+                <img src="Images/Images3/7.jpeg" alt="Comptoir">
+            </div>
+
         </section>
 
-        <section id="projects" class="projects">
-            <div class="projects-header">
-                <h2 class="gold-title">MY PROJECT</h2>
-                <span class="gallery-tag">GALLERY</span>
-            </div>
-
-            <div class="gallery-grid">
-                
-                <div class="gallery-item">
-                    <a href="project-archi.html"> 
-                        <picture>
-                            <source type="image/webp" srcset="Images/Images1/3.webp" width="400" height="300" loading="lazy">
-                            <source type="image/jpeg" srcset="Images/Images1/3.jpeg" width="400" height="300" loading="lazy">
-                            <img src="Images/Images1/3.jpeg" alt="Archi" loading="lazy" width="400" height="300">
-                        </picture>
-                        <h3 class="gallery-title">ARCHI 0.0</h3>
-                    </a> 
-                </div>
-
-               <div class="gallery-item">
-                    <a href="project-jacques.html"> 
-                    <img src="Images/Images3/7.jpeg" alt="Terrasse" loading="lazy" width="400" height="300">
-                    <h3 class="gallery-title">JACQUES<br>TERRASSE</h3>
-                    </a> 
-                </div>
-                <div class="gallery-item">
-                    <a href="project-babel.html">
-                    <picture>
-                        <source type="image/webp" srcset="Images/Images1/5.webp" width="400" height="300" loading="lazy">
-                        <source type="image/jpeg" srcset="Images/Images1/5.jpeg" width="400" height="300" loading="lazy">
-                        <img src="Images/Images1/5.jpeg" alt="Babel Babel" loading="lazy" width="400" height="300">
-                    </picture>
-                    <h3 class="gallery-title">BABEL<br>BABEL</h3>
-                    </a>
-                </div>
-                <div class="gallery-item">
-                    <a href="project-monsud.html">
-                    <picture>
-                        <source type="image/webp" srcset="Images/Images1/1.webp" width="400" height="300" loading="lazy">
-                        <source type="image/jpeg" srcset="Images/Images1/1.jpeg" width="400" height="300" loading="lazy">
-                        <img src="Images/Images1/1.jpeg" alt="Mon Sud" loading="lazy" width="400" height="300">
-                    </picture>
-                    <h3 class="gallery-title">MON SUD</h3>
-                    </a>
-                </div>
-            </div>
-
-            <div class="quote-container">
-                <p class="quote">"Je n'ai jamais cessé de capturer ce qui fait le cœur battant de la Méditerranée"</p>
-                <p class="signature">by Marine</p>
-            </div>
+        <section class="project-footer-quote">
+            <blockquote>
+                “Sur une terrasse, le temps s’arrête. Les rires se mélangent<br>
+                à la lumière, et tout devient<br>
+                instant à capturer”
+            </blockquote>
+            <span class="signature">by MARINE</span>
         </section>
-
-        <section id="visit" class="visit">
-            <div class="visit-top">
-                <span class="section-tag">VISIT</span>
-                <h2 class="visit-title">WELCOME TO THE GALLERY</h2>
-            </div>
-            
-            <div class="visit-map-container">
-                <img src="Images/Images1/immeuble.jpg" class="map-bg" alt="Fond plan" loading="lazy" width="800" height="533"> 
-                
-                <div class="visit-card">
-                    <h3>Address</h3>
-                    <p>Authentic Nice Gallery<br>36 rue Catherine Ségurane, 06300 Nice</p>
-                    
-                    <h3>Open hours :</h3>
-                    <p>Mon — Thu : 9:00-19:00</p>
-                    <p>Fri — Sun : 11:00-17:00</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact" class="contact">
-            <p class="section-tag-center">CONTACT ME</p>
-            
-            <div class="contact-container">
-                <div class="contact-info">
-                    <h2>RESTÉS CONNECTÉS<br>À MON UNIVERS.</h2>
-                    <p>En vous abonnant à ma newsletter vous serez les premiers à découvrir :</p>
-                    <ul>
-                        <li>Mes nouvelles œuvres et expositions</li>
-                        <li>Les événements à venir en avant-première</li>
-                        <li>Des contenus exclusifs réservés aux abonnés</li>
-                    </ul>
-                </div>
-
-                <form class="contact-form">
-                    <div class="form-row">
-                        <div class="input-group">
-                            <label for="nom">Nom *</label>
-                            <input type="text" id="nom" required>
-                        </div>
-                        <div class="input-group">
-                            <label for="prenom">Prénom *</label>
-                            <input type="text" id="prenom" required>
-                        </div>
-                    </div>
-                    <div class="input-group">
-                        <label for="email">E-mail *</label>
-                        <input type="email" id="email" required>
-                    </div>
-                    <div class="input-group">
-                        <label for="message">MESSAGE :</label>
-                        <textarea rows="4" id="message"></textarea>
-                    </div>
-                    <button type="submit">ENVOYER</button>
-                </form>
-            </div>
-        </section>
-
     </main>
 
     <footer class="footer">
         <p>Authentic Nice Gallery - 36 rue Catherine Ségurane</p>
         <p>Tel : +33(0)6 52 06 02 19</p>
-        <div class="footer-icons">FB IG</div>
+        <div class="footer-icons">
+             <a href="#" target="_blank">FB</a>
+             <a href="#" target="_blank">IG</a>
+        </div>
     </footer>
 
     <script>
-        // Fermer le menu mobile automatiquement quand on clique sur un lien d'ancrage
+        // Fermer le menu mobile automatiquement quand on clique sur un lien
         document.addEventListener('DOMContentLoaded', function() {
             const menuCheckbox = document.getElementById('menu-toggle-checkbox');
-            const navLinks = document.querySelectorAll('.navbar a[href^="#"]');
+            const navLinks = document.querySelectorAll('.navbar a');
             
             navLinks.forEach(link => {
                 link.addEventListener('click', function() {
@@ -300,6 +152,5 @@
             });
         });
     </script>
-
-</body>
+    </body>
 </html>
