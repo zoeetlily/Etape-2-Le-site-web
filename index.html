@@ -64,9 +64,9 @@
             .hero-grid { grid-template-columns: 1fr; gap: 20px; padding: 20px; }
             .hero-img-small { display: none; }
             
-            /* NOUVELLE RÈGLE : Correction du titre de la section Contact */
+            /* Correction du titre de la section Contact (Réduction de la taille de police pour qu'elle tienne) */
             .contact-info h2 {
-                font-size: 1.8rem; /* Réduit la taille pour qu'elle tienne sur un écran de mobile */
+                font-size: 1.8rem; 
                 line-height: 1.2;  
             }
         }
@@ -74,17 +74,19 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" 
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
+    
+    <link rel="preload" 
           href="https://fonts.googleapis.com/css2?family=Aboreto&family=Gasoek+One&family=Montserrat:wght@300;400;700&display=swap"
-          media="print" 
-          onload="this.media='all'"
+          as="style" 
+          onload="this.onload=null;this.rel='stylesheet'"
     >
     <noscript>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Aboreto&family=Gasoek+One&family=Montserrat:wght@300;400;700&display=swap">
     </noscript>
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
     
     <link rel="stylesheet" href="css/code.css" media="print" onload="this.media='all'">
     <noscript><link rel="stylesheet" href="css/code.css"></noscript>
@@ -188,11 +190,7 @@
 
                <div class="gallery-item">
                     <a href="project-jacques.html"> 
-                    <picture>
-                        <source type="image/webp" srcset="Images/Images1/7.webp" width="400" height="300" loading="lazy">
-                        <source type="image/jpeg" srcset="Images/Images1/7.jpeg" width="400" height="300" loading="lazy">
-                        <img src="Images/Images3/7.jpeg" alt="Terrasse" loading="lazy" width="400" height="300">
-                    </picture>
+                    <img src="Images/Images3/7.jpeg" alt="Terrasse" loading="lazy" width="400" height="300">
                     <h3 class="gallery-title">JACQUES<br>TERRASSE</h3>
                     </a> 
                 </div>
