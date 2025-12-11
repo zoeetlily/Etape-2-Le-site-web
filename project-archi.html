@@ -4,15 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Archi 0.0 - Vive le Sud</title>
+    <meta name="description" content="Découvrez le projet 'Archi 0.0' de Marine, une archive photographique silencieuse de l'architecture intérieure du Sud.">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Aboreto&family=Gasoek+One&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
     
-    <link rel="stylesheet" href="css/body.css">
+    <link rel="preload" 
+          href="https://fonts.googleapis.com/css2?family=Aboreto&family=Gasoek+One&family=Montserrat:wght@300;400;700&display=swap"
+          as="style" 
+          onload="this.onload=null;this.rel='stylesheet'"
+    >
+    <noscript>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Aboreto&family=Gasoek+One&family=Montserrat:wght@300;400;700&display=swap">
+    </noscript>
+    
+    <link rel="stylesheet" href="css/body.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="css/body.css"></noscript>
+
+    <style>
+        /* Force le fond marron et le texte doré (pour consistance) */
+        body {
+            background-color: #34291b !important;
+            color: #fee7bd !important;
+        }
+        .project-title, .logo, .socials a, .footer-icons a {
+            color: #fee7bd !important;
+        }
+        .gallery-subtitle, .navbar a {
+            color: #ffffff !important;
+        }
+    </style>
 </head>
 
 <body class="dark-page">
-
     <header class="header">
         <a href="index.html" class="logo">VIVE LE SUD<br><span class="logo-sub">BY MARINE</span></a>
         
