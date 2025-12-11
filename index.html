@@ -70,7 +70,24 @@
             <h1 class="hero-title">MY SOUTH</h1>
             <div class="hero-grid">
                 <div class="hero-img-main">
-                    <img src="Images/Images1/im.webp" alt="Façade colorée Nice" loading="eager" width="600" height="400" fetchpriority="high">
+                    <picture>
+                        <source type="image/webp" 
+                                srcset="Images/Images1/im.webp" 
+                                width="600" height="400" 
+                                fetchpriority="high">
+                        
+                        <source type="image/jpeg" 
+                                srcset="Images/Images1/im.jpeg" 
+                                width="600" height="400" 
+                                fetchpriority="high">
+                        
+                        <img src="Images/Images1/im.jpeg" 
+                             alt="Façade colorée Nice" 
+                             loading="eager" 
+                             width="600" 
+                             height="400" 
+                             fetchpriority="high">
+                    </picture>
                 </div>
                 <div class="hero-img-small">
                     <img src="Images/Images1/4.webp" alt="Lecture au soleil" loading="eager" width="340" height="231">
