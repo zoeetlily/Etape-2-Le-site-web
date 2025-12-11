@@ -6,9 +6,67 @@
     <title>Vive le Sud by Marine</title>
     <meta name="description" content="Découvrez l'univers de Marine, photographe du Sud de la France, mêlant culture italienne, niçoise et corse. Galerie, expositions et contact.">
     
+    <style>
+        /* CSS Critique - Extrait de code.css */
+        
+        /* 1. Variables essentielles */
+        :root {
+            --dark-brown: #34291b;
+            --gold-text: #fee7bd;
+            --light-bg: #f9f5f0;
+            --orange-accent: #b56320;
+            --font-title: 'Gasoek One', display;
+            --font-body: 'Montserrat', sans-serif;
+            --font-elegant: 'Aboreto', cursive;
+        }
+
+        /* 2. Reset + Bases */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background-color: var(--light-bg); color: var(--dark-brown); font-family: var(--font-body); overflow-x: hidden; }
+        img { width: 100%; display: block; object-fit: cover; }
+        
+        /* 3. Header + Navigation (Critique) */
+        .header { background-color: var(--dark-brown); padding: 15px 40px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; height: 70px; }
+        .logo { color: var(--gold-text); font-family: var(--font-title); font-size: 1.5rem; text-decoration: none; line-height: 1.2; }
+        .logo-sub { font-size: 0.8rem; font-family: var(--font-body); }
+        .navbar a { text-decoration: none; color: var(--gold-text); font-size: 1rem; margin-left: 25px; transition: color 0.3s; }
+        .socials { display: flex; gap: 15px; }
+        .socials a { color: var(--gold-text); font-size: 1.2rem; text-decoration: none; }
+        
+        /* 4. Section Hero (Critique) */
+        .hero-title { font-family: var(--font-title); font-size: 10vw; text-align: center; padding-top: 100px; color: var(--dark-brown); }
+        .hero-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 20px; padding: 40px 40px 100px; position: relative; }
+        .hero-img-main { grid-column: 1 / 3; }
+        .hero-img-small { width: 340px; height: 231px; position: absolute; right: 40px; bottom: -50px; box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); }
+        
+        /* 5. Accessibilité */
+        .visually-hidden {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+        }
+
+        /* Styles pour le menu mobile (au moins le burger) */
+        .menu-toggle { display: none; cursor: pointer; flex-direction: column; justify-content: space-around; width: 30px; height: 25px; }
+        .bar { width: 100%; height: 3px; background-color: var(--gold-text); transition: all 0.3s ease-in-out; }
+        /* Media Query pour le mode mobile */
+        @media (max-width: 768px) {
+            .navbar { display: none; }
+            .socials:not(.mobile-socials) { display: none; }
+            .menu-toggle { display: flex; }
+            .hero-grid { grid-template-columns: 1fr; gap: 20px; padding: 20px; }
+            .hero-img-small { display: none; }
+        }
+    </style>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    
     <link rel="stylesheet" 
           href="https://fonts.googleapis.com/css2?family=Aboreto&family=Gasoek+One&family=Montserrat:wght@300;400;700&display=swap"
           media="print" 
@@ -21,21 +79,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'">
     <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
     
-    <link rel="stylesheet" href="css/code.css">
-    
-    <style>
-        .visually-hidden {
-            position: absolute;
-            width: 1px;
-            height: 1px;
-            padding: 0;
-            margin: -1px;
-            overflow: hidden;
-            clip: rect(0, 0, 0, 0);
-            white-space: nowrap;
-            border-width: 0;
-        }
-    </style>
+    <link rel="stylesheet" href="css/code.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="css/code.css"></noscript>
 </head>
 <body>
 
@@ -71,26 +116,17 @@
             <div class="hero-grid">
                 <div class="hero-img-main">
                     <picture>
-                        <source type="image/webp" 
-                                srcset="Images/Images1/im.webp" 
-                                width="600" height="400" 
-                                fetchpriority="high">
-                        
-                        <source type="image/jpeg" 
-                                srcset="Images/Images1/im.jpeg" 
-                                width="600" height="400" 
-                                fetchpriority="high">
-                        
-                        <img src="Images/Images1/im.jpeg" 
-                             alt="Façade colorée Nice" 
-                             loading="eager" 
-                             width="600" 
-                             height="400" 
-                             fetchpriority="high">
+                        <source type="image/webp" srcset="Images/Images1/im.webp" width="600" height="400" fetchpriority="high">
+                        <source type="image/jpeg" srcset="Images/Images1/im.jpeg" width="600" height="400" fetchpriority="high">
+                        <img src="Images/Images1/im.jpeg" alt="Façade colorée Nice" loading="eager" width="600" height="400" fetchpriority="high">
                     </picture>
                 </div>
                 <div class="hero-img-small">
-                    <img src="Images/Images1/4.webp" alt="Lecture au soleil" loading="eager" width="340" height="231">
+                    <picture>
+                        <source type="image/webp" srcset="Images/Images1/4.webp" width="340" height="231" loading="eager">
+                        <source type="image/jpeg" srcset="Images/Images1/4.jpeg" width="340" height="231" loading="eager">
+                        <img src="Images/Images1/4.jpeg" alt="Lecture au soleil" loading="eager" width="340" height="231">
+                    </picture>
                 </div>
             </div>
         </section>
@@ -108,7 +144,11 @@
             
             <div class="about-content">
                 <div class="about-photo">
-                    <img src="Images/Images1/2.webp" alt="Portrait Marine" loading="eager" width="300" height="450">
+                    <picture>
+                        <source type="image/webp" srcset="Images/Images1/2.webp" width="300" height="450" loading="eager">
+                        <source type="image/jpeg" srcset="Images/Images1/2.jpeg" width="300" height="450" loading="eager">
+                        <img src="Images/Images1/2.jpeg" alt="Portrait Marine" loading="eager" width="300" height="450">
+                    </picture>
                 </div>
                 <div class="about-text">
                     <p>
@@ -130,26 +170,42 @@
                 
                 <div class="gallery-item">
                     <a href="project-archi.html"> 
-                        <img src="Images/Images1/3.webp" alt="Archi" loading="lazy" width="400" height="300">
+                        <picture>
+                            <source type="image/webp" srcset="Images/Images1/3.webp" width="400" height="300" loading="lazy">
+                            <source type="image/jpeg" srcset="Images/Images1/3.jpeg" width="400" height="300" loading="lazy">
+                            <img src="Images/Images1/3.jpeg" alt="Archi" loading="lazy" width="400" height="300">
+                        </picture>
                         <h3 class="gallery-title">ARCHI 0.0</h3>
                     </a> 
                 </div>
 
                 <div class="gallery-item">
                     <a href="project-jacques.html"> 
-                    <img src="Images/Images3/7.jpeg" alt="Terrasse" loading="lazy" width="400" height="300">
+                    <picture>
+                        <source type="image/webp" srcset="Images/Images3/7.webp" width="400" height="300" loading="lazy">
+                        <source type="image/jpeg" srcset="Images/Images3/7.jpeg" width="400" height="300" loading="lazy">
+                        <img src="Images/Images3/7.jpeg" alt="Terrasse" loading="lazy" width="400" height="300">
+                    </picture>
                     <h3 class="gallery-title">JACQUES<br>TERRASSE</h3>
                     </a> 
                 </div>
                 <div class="gallery-item">
                     <a href="project-babel.html">
-                    <img src="Images/Images1/5.webp" alt="Babel Babel" loading="lazy" width="400" height="300">
+                    <picture>
+                        <source type="image/webp" srcset="Images/Images1/5.webp" width="400" height="300" loading="lazy">
+                        <source type="image/jpeg" srcset="Images/Images1/5.jpeg" width="400" height="300" loading="lazy">
+                        <img src="Images/Images1/5.jpeg" alt="Babel Babel" loading="lazy" width="400" height="300">
+                    </picture>
                     <h3 class="gallery-title">BABEL<br>BABEL</h3>
                     </a>
                 </div>
                 <div class="gallery-item">
                     <a href="project-monsud.html">
-                    <img src="Images/Images1/1.webp" alt="Mon Sud" loading="lazy" width="400" height="300">
+                    <picture>
+                        <source type="image/webp" srcset="Images/Images1/1.webp" width="400" height="300" loading="lazy">
+                        <source type="image/jpeg" srcset="Images/Images1/1.jpeg" width="400" height="300" loading="lazy">
+                        <img src="Images/Images1/1.jpeg" alt="Mon Sud" loading="lazy" width="400" height="300">
+                    </picture>
                     <h3 class="gallery-title">MON SUD</h3>
                     </a>
                 </div>
@@ -168,7 +224,11 @@
             </div>
             
             <div class="visit-map-container">
-                <img src="Images/Images1/im.webp" class="map-bg" alt="Fond plan" loading="lazy" width="800" height="533"> 
+                <picture>
+                    <source type="image/webp" srcset="Images/Images1/im.webp" width="800" height="533" loading="lazy">
+                    <source type="image/jpeg" srcset="Images/Images1/im.jpeg" width="800" height="533" loading="lazy">
+                    <img src="Images/Images1/im.jpeg" class="map-bg" alt="Fond plan" loading="lazy" width="800" height="533"> 
+                </picture>
                 
                 <div class="visit-card">
                     <h3>Address</h3>
